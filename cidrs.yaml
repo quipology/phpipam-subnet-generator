@@ -1,0 +1,9 @@
+# List CIDRs to be provisioned - include name and mask
+---
+CIDRs:
+  - Name: Go API Test 1
+    Mask: 21
+  # - Name: Go API Test 2
+  #   Mask: 18
+  - Name: Go API Test 3
+    Mask: 17
