@@ -69,11 +69,11 @@ func checkCIDRs(m map[string][]CIDR) error {
 }
 
 func main() {
+	processFlags()
 	fmt.Println("Attempting to get PHPIPAM Token..")
 	err := checkAPIToken(apiToken)
 	checkError(err)
 	fmt.Println("PHPIPAM Token found!")
-	processFlags()
 	err = checkIDFlags(sectionId, masterSubnetId)
 	checkError(err)
 	fmt.Printf("Attempting to open '%v'..\n", yamlFile)
@@ -85,11 +85,9 @@ func main() {
 	checkError(err)
 	err = checkCIDRs(cidrs)
 	checkError(err)
-	// fmt.Println(cidrs) // TODO: Remove this line
 	for _, cidr := range cidrs["CIDRs"] {
 		addCIDR(cidr)
 		time.Sleep(time.Second) // Sleep a second after each API call
 	}
-	// fmt.Println(len(cidrs)) // TODO: Remove this line
 	fmt.Println("Execution complete!")
 }
