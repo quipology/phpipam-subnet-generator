@@ -1,9 +1,10 @@
-# List CIDRs to be provisioned - include name and mask
+# List names and desired subnet mask to be provisioned 
 ---
 CIDRs:
-  - Name: AWS Security VPC 
-    Mask: 16
-  - Name: VLAN_20
-    Mask: 26
-  - Name: Voice VLAN
-    Mask: 23
+  # - Name: secops-vpc-prod
+  #   Mask: 16
+  # - Name: voice_vlan200
+  #   Mask: 24
+  # - Name: secops-vpc-sandbox
+  #   Mask: 16
+  

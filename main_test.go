@@ -9,13 +9,6 @@ func TestCheckAPIToken(t *testing.T) {
 	}
 }
 
-func TestCheckIDFlags(t *testing.T) {
-	err := checkIDFlags("7", "test")
-	if err == nil {
-		t.Error("Expected error, but received nil.")
-	}
-}
-
 func TestCheckCIDRs(t *testing.T) {
 	m := make(map[string][]CIDR)
 	err := checkCIDRs(m)

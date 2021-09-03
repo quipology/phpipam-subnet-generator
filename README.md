@@ -8,19 +8,18 @@ This tool will provision new subnets in [phpIPAM](https://phpipam.net/).
     ```
     ---
     CIDRs:
-      - Name: AWS Security VPC 
+      - Name: secops-vpc-prod
         Mask: 16
-      - Name: VLAN_20
-        Mask: 26
-      - Name: Voice VLAN
-        Mask: 23
+      - Name: voice_vlan200
+        Mask: 24
+      - Name: secops-vpc-sandbox
+        Mask: 16
     ```
 ## Things to Note
-You can manually set the following via flags (see usage below for details):
+You can manually set the following via flags (see usage for details):
 
 - YAML config file
 - Master subnet Id
-- Section identifier
 - Base API URL
 
 ## Usage
@@ -28,13 +27,8 @@ You can manually set the following via flags (see usage below for details):
 Usage of ./prog
   -f string
         Specify the YAML filename. (default "cidrs.yaml")
-  -m string
-        Master subnet id for nested subnet. (default "231")
-  -s string
-        Section identifier - mandatory on add method. (default "1")
+  -m int
+        Master subnet id for nested subnet. (default 231)
   -u string
-        API base URL. (default "https://<some-domain>/api/netops")
+        API base URL. (default "https://<some_domain>/api/netops")
 ```
-
-## Author
-[Bobby Williams](https://www.linkedin.com/in/bobby-williams-48222450)

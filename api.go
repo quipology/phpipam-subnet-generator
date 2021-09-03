@@ -16,7 +16,7 @@ type apiCIDR struct {
 
 const contentType = "application/json"
 
-func addCIDR(c CIDR) {
+func createSubnet(c CIDR) {
 	fmt.Printf("Attempting to create CIDR for '%v' with a '/%v' mask..\n", c.Name, c.Mask)
 	h := make(http.Header)
 	h.Add("phpipam-token", apiToken) // Add API token to header
